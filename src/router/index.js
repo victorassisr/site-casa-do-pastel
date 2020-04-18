@@ -1,14 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Local from '../views/Local.vue'
+import Cardapio from '../views/Cardapio.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/local',
+    name: 'Local',
+    component: Local
+  },
+  {
+    path: '/menu',
+    name: 'menu',
+    component: Cardapio
   },
   {
     path: '/about',
