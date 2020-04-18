@@ -3,7 +3,7 @@
     <div class="banner">
       <div class="banner-text">
         <h2 class="style-font">Faça já o seu pedido!</h2>
-        <p>Trabalhamos com salgados diversos. Pastéis de carne, coxinhas, espetinhos...</p>
+        <p>Trabalhamos com salgados diversos. Pasteis de carne, coxinhas, espetinhos...</p>
         <p>Aquele refri geladinho!</p>
         <p>
           Venha conferir! Se já conhece, peça o salgado mais
