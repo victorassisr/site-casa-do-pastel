@@ -28,9 +28,9 @@
                 3-
                 <span class="spotlight">Pastel Frango</span>
                 <span class="spotlight-dots">.....................</span>
-                <span class="spotlight">R$ 3,00</span>
+                <span class="spotlight">R$ 3,25</span>
               </p>
-              <p class="ingredientes">Frango com Creme de Milho</p>
+              <p class="ingredientes">Risole de Frango com Creme de Milho</p>
             </div>
             <div class="item">
               <p class="produto">
@@ -46,7 +46,7 @@
                 5-
                 <span class="spotlight">Coxinha</span>
                 <span class="spotlight-dots">..............................</span>
-                <span class="spotlight">R$ 3,00</span>
+                <span class="spotlight">R$ 3,25</span>
               </p>
               <p class="ingredientes">Frango com Catupiry</p>
             </div>
@@ -55,7 +55,7 @@
                 6-
                 <span class="spotlight">Enroladinho</span>
                 <span class="spotlight-dots">........................</span>
-                <span class="spotlight">R$ 3,00</span>
+                <span class="spotlight">R$ 3,25</span>
               </p>
               <p class="ingredientes">Queijo e Salsicha</p>
             </div>
@@ -64,7 +64,7 @@
                 7-
                 <span class="spotlight">Espetinho</span>
                 <span class="spotlight-dots">...........................</span>
-                <span class="spotlight">R$ 3,00</span>
+                <span class="spotlight">R$ 3,25</span>
               </p>
               <p class="ingredientes">Frango com Mussarela</p>
             </div>
@@ -122,7 +122,7 @@
             <div class="item">
               <p class="produto">
                 6-
-                <span class="spotlight">Água</span>
+                <span class="spotlight">Água com gás</span>
                 <span class="spotlight-dots">...............................</span>
                 <span class="spotlight">R$ 2,50</span>
               </p>
@@ -130,18 +130,69 @@
             <div class="item">
               <p class="produto">
                 7-
-                <span class="spotlight">Kuat</span>
-                <span class="spotlight-dots">................................</span>
-                <span class="spotlight">R$ 2,50</span>
+                <span class="spotlight">Água sem gás</span>
+                <span class="spotlight-dots">...............................</span>
+                <span class="spotlight">R$ 2,00</span>
               </p>
             </div>
             <div class="item">
               <p class="produto">
                 8-
+                <span class="spotlight">Kuat 2L</span>
+                <span class="spotlight-dots">................................</span>
+                <span class="spotlight">R$ 5,00</span>
+              </p>
+            </div>
+            <div class="item">
+              <p class="produto">
+                9-
                 <span class="spotlight">Skol Lata</span>
                 <span class="spotlight-dots">..........................</span>
                 <span class="spotlight">R$ 3,00</span>
               </p>
+            </div>
+            <div class="item">
+              <p class="produto">
+                10-
+                <span class="spotlight">Brahma lata 350ML</span>
+                <span class="spotlight-dots">..........................</span>
+                <span class="spotlight">R$ 3,00</span>
+              </p>
+            </div>
+            <div class="item">
+              <p class="produto">
+                11-
+                <span class="spotlight">Kaiser lata 350ML</span>
+                <span class="spotlight-dots">..........................</span>
+                <span class="spotlight">R$ 2,50</span>
+              </p>
+            </div>
+            <div class="item">
+              <p class="produto">
+                12-
+                <span class="spotlight">Suco DellVale Lata 290ML</span>
+                <span class="spotlight-dots">..........................</span>
+                <span class="spotlight">R$ 3,50</span>
+              </p>
+              <p class="ingredientes">Sabores Pêssego e Goiaba</p>
+            </div>
+            <div class="item">
+              <p class="produto">
+                13-
+                <span class="spotlight">DellVale Fuit 450ML</span>
+                <span class="spotlight-dots">..........................</span>
+                <span class="spotlight">R$ 2,50</span>
+              </p>
+              <p class="ingredientes">Sabores Laranja e Uva</p>
+            </div>
+            <div class="item">
+              <p class="produto">
+                14-
+                <span class="spotlight">Caçulinha 200ML</span>
+                <span class="spotlight-dots">..........................</span>
+                <span class="spotlight">R$ 2,00</span>
+              </p>
+              <p class="ingredientes">Coca e Fanta</p>
             </div>
           </div>
         </div>
