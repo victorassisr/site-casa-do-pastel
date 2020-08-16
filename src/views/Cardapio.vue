@@ -1,202 +1,30 @@
 <template>
-  <div>
-    <div class="container-fluid wrapper">
-      <div class="banner">
-        <div class="menu container-fluid">
-          <div class="salgados">
-            <p class="menu-title">Salgados</p>
-            <div class="item">
-              <p class="produto">
-                1-
-                <span class="spotlight">Pastel Carne</span>
-                <span class="spotlight-dots">......................</span>
-                <span class="spotlight">R$ 3,00</span>
-              </p>
-              <p class="ingredientes">Carne moída, Azeitonas, Tomate e Queijo</p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                2-
-                <span class="spotlight">Pastel Frango</span>
-                <span class="spotlight-dots">.....................</span>
-                <span class="spotlight">R$ 3,00</span>
-              </p>
-              <p class="ingredientes">Frango, Catupiry, Bacon, Milho</p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                3-
-                <span class="spotlight">Pastel Frango</span>
-                <span class="spotlight-dots">.....................</span>
-                <span class="spotlight">R$ 3,25</span>
-              </p>
-              <p class="ingredientes">Risole de Frango com Creme de Milho</p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                4-
-                <span class="spotlight">Pastel Queijo e Presunto</span>
-                <span class="spotlight-dots">...</span>
-                <span class="spotlight">R$ 3,00</span>
-              </p>
-              <p class="ingredientes">Queijo e Presunto</p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                5-
-                <span class="spotlight">Coxinha</span>
-                <span class="spotlight-dots">..............................</span>
-                <span class="spotlight">R$ 3,25</span>
-              </p>
-              <p class="ingredientes">Frango com Catupiry</p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                6-
-                <span class="spotlight">Enroladinho</span>
-                <span class="spotlight-dots">........................</span>
-                <span class="spotlight">R$ 3,25</span>
-              </p>
-              <p class="ingredientes">Queijo e Salsicha</p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                7-
-                <span class="spotlight">Espetinho</span>
-                <span class="spotlight-dots">...........................</span>
-                <span class="spotlight">R$ 3,25</span>
-              </p>
-              <p class="ingredientes">Frango com Mussarela</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid wrapper">
-      <div class="banner">
-        <div class="menu container-fluid">
-          <div class="salgados">
-            <p class="menu-title">Bebidas</p>
-            <div class="item">
-              <p class="produto">
-                1-
-                <span class="spotlight">Coca 600ML</span>
-                <span class="spotlight-dots">......................</span>
-                <span class="spotlight">R$ 4,50</span>
-              </p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                2-
-                <span class="spotlight">Coca 1L</span>
-                <span class="spotlight-dots">............................</span>
-                <span class="spotlight">R$ 5,00</span>
-              </p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                3-
-                <span class="spotlight">Coca 2L</span>
-                <span class="spotlight-dots">...........................</span>
-                <span class="spotlight">R$ 8,00</span>
-              </p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                4-
-                <span class="spotlight">Pichula</span>
-                <span class="spotlight-dots">............................</span>
-                <span class="spotlight">R$ 2,50</span>
-              </p>
-              <p class="ingredientes">Sabores Uva e Guaraná</p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                5-
-                <span class="spotlight">Fanta Lata 310ML</span>
-                <span class="spotlight-dots">...............</span>
-                <span class="spotlight">R$ 3,00</span>
-              </p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                6-
-                <span class="spotlight">Água com gás</span>
-                <span class="spotlight-dots">...............................</span>
-                <span class="spotlight">R$ 2,50</span>
-              </p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                7-
-                <span class="spotlight">Água sem gás</span>
-                <span class="spotlight-dots">...............................</span>
-                <span class="spotlight">R$ 2,00</span>
-              </p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                8-
-                <span class="spotlight">Kuat 2L</span>
-                <span class="spotlight-dots">................................</span>
-                <span class="spotlight">R$ 5,00</span>
-              </p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                9-
-                <span class="spotlight">Skol Lata</span>
-                <span class="spotlight-dots">..........................</span>
-                <span class="spotlight">R$ 3,00</span>
-              </p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                10-
-                <span class="spotlight">Brahma lata 350ML</span>
-                <span class="spotlight-dots">..........................</span>
-                <span class="spotlight">R$ 3,00</span>
-              </p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                11-
-                <span class="spotlight">Kaiser lata 350ML</span>
-                <span class="spotlight-dots">..........................</span>
-                <span class="spotlight">R$ 2,50</span>
-              </p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                12-
-                <span class="spotlight">Suco DellVale Lata 290ML</span>
-                <span class="spotlight-dots">..........................</span>
-                <span class="spotlight">R$ 3,50</span>
-              </p>
-              <p class="ingredientes">Sabores Pêssego e Goiaba</p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                13-
-                <span class="spotlight">DellVale Fuit 450ML</span>
-                <span class="spotlight-dots">..........................</span>
-                <span class="spotlight">R$ 2,50</span>
-              </p>
-              <p class="ingredientes">Sabores Laranja e Uva</p>
-            </div>
-            <div class="item">
-              <p class="produto">
-                14-
-                <span class="spotlight">Caçulinha 200ML</span>
-                <span class="spotlight-dots">..........................</span>
-                <span class="spotlight">R$ 2,00</span>
-              </p>
-              <p class="ingredientes">Coca e Fanta</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="wrapper">
+    <div class="space"></div>
+    <div class="table-responsive" v-for="category in categories" :key="category.id">
+      <p class="category">
+        <span>{{category.name}}</span>
+      </p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Produto</th>
+            <th scope="col">Valor</th>
+          </tr>
+        </thead>
+        <tbody v-for="(product, index) in category.products" :key="product.id">
+          <tr>
+            <th scope="row">{{index+1}}</th>
+            <td class="spotlight">{{product.name}}</td>
+            <td class="spotlight">{{product.price | formatPrice}}</td>
+          </tr>
+          <tr v-if="product.ingredients">
+            <td class="ingredients" colspan="1">Ingredientes:</td>
+            <td class="ingredients" colspan="2">{{product.ingredients}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -204,58 +32,103 @@
 <script>
 export default {
   name: "Cardapio",
-  components: {}
+  components: {},
+  data: () => {
+    return {
+      categories: [
+        {
+          name: "Salgados",
+          products: [
+            {
+              name: "Pastel de carne",
+              id: 1,
+              price: "3",
+              ingredients: "Carne de boi, Queijo",
+            },
+            {
+              name: "Pastel de Queijo",
+              id: 2,
+              price: "3",
+              ingredients: "Queijo",
+            },
+          ],
+        },
+        {
+          name: "Bebidas",
+          products: [
+            {
+              name: "Coca Cola 2L",
+              id: 1,
+              price: "8.5",
+            },
+          ],
+        },
+      ],
+    };
+  },
+  filters: {
+    formatPrice: (value) => {
+      return `R$ ${Number(value).toLocaleString("br", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      })}`;
+    },
+  },
 };
 </script>
 
 <style scoped>
 .wrapper {
-  padding: 0;
-}
-.banner {
-  background: url("../assets/bg_wood.jpg");
   display: flex;
-  min-height: 80.37vh;
-  padding-top: 60px;
-  justify-content: center;
+  flex: 1;
+  flex-direction: column;
+  background: url("../assets/bg_wood.jpg");
 }
 
-.menu {
+.space {
+  height: 80px;
+}
+
+.table {
+  font-family: "Amarante", "cursive";
+  border-radius: 10px;
   background: url("../assets/bg_menu.jpg");
-  width: 70%;
-  padding: 7px;
-  margin: 50px auto;
-  box-shadow: 0 -6px 20px 6px #000;
-  border-radius: 6px;
-}
-
-.menu-title {
-  background-color: #f1ac0b;
-  width: fit-content;
-  margin: 7px auto 20px auto;
-  padding: 7px 15px;
-  border-radius: 50%;
-  color: crimson;
-  font-family: "Amarante", cursive;
-  font-size: 200%;
-  box-shadow: 0 0 10px #333;
-}
-
-.item {
   text-align: center;
-  font-family: "Amarante", cursive;
+}
+
+.table > tbody {
+  background: transparent;
+}
+
+.table-responsive {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.ingredients {
+  text-align: center;
+}
+
+.category {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.category span {
+  display: block;
+  width: fit-content;
+  background: #f1ac0b;
+  border-radius: 10px;
+  padding: 4px 20px;
+  margin: 6px auto;
+  color: #dc143c;
+  font-family: "Amarante", "cursive";
+  font-size: 200%;
+  box-shadow: 0 4px 10px #000;
 }
 
 .spotlight {
-  color: crimson;
-}
-
-.spotlight-dots {
-  color: #333;
-}
-
-.ingredientes {
-  color: #333;
-  font-weight: bolder;
+  color: #dc143c;
 }
 </style>

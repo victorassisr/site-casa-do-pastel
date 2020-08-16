@@ -22,6 +22,12 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/menu">Cardápio</router-link>
           </li>
+          <li v-if="ls_logged" class="nav-item">
+            <router-link class="nav-link" to="/products">Produtos</router-link>
+          </li>
+          <li v-if="ls_logged" class="nav-item">
+            <a class="nav-link" href="#" v-on:click="logout()">Sair</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -32,16 +38,26 @@
 
 <script>
 import Footer from "./components/Footer.vue";
+import { mixin, global } from "./mixins/general.mixin";
 export default {
   components: {
-    Footer
-  }
+    Footer,
+  },
+  mixins: [global],
+  mounted: function () {},
+  data: function () {
+    return {};
+  },
 };
 </script>
 
 <style>
 #app {
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 #navigation {
