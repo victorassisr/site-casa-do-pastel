@@ -30,41 +30,37 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Cardapio",
   components: {},
+  beforeMount: async function () {
+    await this.getCategoriesWithProducts();
+  },
   data: () => {
     return {
-      categories: [
-        {
-          name: "Salgados",
-          products: [
-            {
-              name: "Pastel de carne",
-              id: 1,
-              price: "3",
-              ingredients: "Carne de boi, Queijo",
-            },
-            {
-              name: "Pastel de Queijo",
-              id: 2,
-              price: "3",
-              ingredients: "Queijo",
-            },
-          ],
-        },
-        {
-          name: "Bebidas",
-          products: [
-            {
-              name: "Coca Cola 2L",
-              id: 1,
-              price: "8.5",
-            },
-          ],
-        },
-      ],
+      categories: [],
     };
+  },
+  methods: {
+    getCategoriesWithProducts: async function () {
+      try {
+        const { data } = await axios.get(
+          `https://api-casa-do-pastel.herokuapp.com/product-categories`
+        );
+        this.categories = data;
+      } catch (err) {
+        if (err.response) {
+          alert(err.response.message);
+          return;
+        }
+        if (err.isAxiosError) {
+          alert("Houve um erro.. ");
+          return;
+        }
+      }
+    },
   },
   filters: {
     formatPrice: (value) => {
@@ -82,7 +78,8 @@ export default {
   display: flex;
   flex: 1;
   flex-direction: column;
-  background: url("../assets/bg_wood.jpg");
+  background: url("../assets/bg_wood.jpg") no-repeat;
+  background-size: cover;
 }
 
 .space {

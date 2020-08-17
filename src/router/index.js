@@ -6,6 +6,12 @@ import Cardapio from '../views/Cardapio.vue'
 import Login from '../views/Login.vue'
 import NotFound from '../views/NotFound.vue'
 import Product from '../views/Product.vue'
+import Admin from '../views/Admin.vue'
+import Categories from '../views/Categories.vue'
+import EditCategory from '../views/EditCategory.vue'
+import EditProduct from '../views/EditProduct.vue'
+import CreateCategory from '../views/CreateCategory.vue'
+import CreateProduct from '../views/CreateProduct.vue'
 
 Vue.use(VueRouter)
 
@@ -34,6 +40,36 @@ const routes = [
     path: '/products',
     name: 'Products',
     component: Product
+  },
+  {
+    path: '/products/new',
+    name: 'CreateProduct',
+    component: CreateProduct
+  },
+  {
+    path: '/products/:id/edit',
+    name: 'EditProduct',
+    component: EditProduct
+  },
+  {
+    path: '/categories',
+    name: 'Categories',
+    component: Categories
+  },
+  {
+    path: '/categories/:id/edit',
+    name: 'EditCategory',
+    component: EditCategory
+  },
+  {
+    path: '/categories/new',
+    name: 'CreateCategory',
+    component: CreateCategory
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: Admin
   },
   {
     path: '/about',

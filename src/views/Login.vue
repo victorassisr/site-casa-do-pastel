@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="space"></div>
-    <form>
+    <form @submit.prevent.stop="doLogin()">
       <div class="form-group">
         <label for="exampleInputEmail1">Endereço de email</label>
         <input
@@ -34,7 +34,7 @@
         <input type="checkbox" class="form-check-input" v-model="remember" id="exampleCheck1" />
         <label class="form-check-label" for="exampleCheck1">Mantenha logado</label>
       </div>
-      <button type="button" v-on:click="doLogin()" class="btn btn-primary btn-login">Login</button>
+      <button type="submit" class="btn btn-primary btn-login">Login</button>
     </form>
   </div>
 </template>
@@ -77,8 +77,12 @@ export default {
           alert("Email ou senha inválidos");
         }
       } catch (err) {
-        if (err.hasOwnProperty("response")) {
+        if (err.response) {
           alert(err.response.data.message);
+          return;
+        } else if (err.message) {
+          alert(`Houve um erro tente novamente.. ${err.message}`);
+          return;
         } else {
           alert("Houve um erro tente novamente");
         }

@@ -23,6 +23,12 @@
             <router-link class="nav-link" to="/menu">Cardápio</router-link>
           </li>
           <li v-if="ls_logged" class="nav-item">
+            <router-link class="nav-link" to="/admin">Admin</router-link>
+          </li>
+          <li v-if="ls_logged" class="nav-item">
+            <router-link class="nav-link" to="/categories">Categorias</router-link>
+          </li>
+          <li v-if="ls_logged" class="nav-item">
             <router-link class="nav-link" to="/products">Produtos</router-link>
           </li>
           <li v-if="ls_logged" class="nav-item">
@@ -44,9 +50,22 @@ export default {
     Footer,
   },
   mixins: [global],
+  beforeCreate: function () {
+    localStorage.setItem(
+      "ls_baseUrl",
+      "https://api-casa-do-pastel.herokuapp.com"
+    );
+  },
   mounted: function () {},
   data: function () {
-    return {};
+    return {
+      ls_baseUrl: this.getUrlBaseFromLS(),
+    };
+  },
+  methods: {
+    getUrlBaseFromLS() {
+      return localStorage.getItem("ls_baseUrl");
+    },
   },
 };
 </script>

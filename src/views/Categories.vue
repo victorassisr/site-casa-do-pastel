@@ -5,7 +5,7 @@
       <p class="new">
         <span class="new-text">
           <i class="fa fa-plus" aria-hidden="true"></i>
-          <router-link class="link-new-product" to="/products/new">Novo</router-link>
+          <router-link class="link-new-category" to="/categories/new">Novo</router-link>
         </span>
       </p>
     </div>
@@ -13,23 +13,19 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Produto</th>
-          <th>Categoria</th>
-          <th>Valor</th>
-          <th>Ingredientes</th>
+          <th scope="col">Categoria</th>
+          <th>Qtd de Produtos</th>
           <th>Opções</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(prod, index) in products" :key="prod.id">
+        <tr v-for="(cat, index) in categories" :key="cat.id">
           <th scope="row">{{index+1}}</th>
-          <td>{{prod.name}}</td>
-          <td>{{prod.category.name}}</td>
-          <td>{{prod.price | formatPrice() }}</td>
-          <td>{{prod.ingredients ? prod.ingredients : '-'}}</td>
+          <td>{{cat.name}}</td>
+          <td>{{cat.products.length}}</td>
           <td>
-            <router-link class="btn btn-warning edit" :to="`/products/${prod.id}/edit`">Editar</router-link>
-            <span class="btn btn-danger" @click="deleteCategory(prod)">Excluir</span>
+            <router-link class="btn btn-warning edit" :to="`/categories/${cat.id}/edit`">Editar</router-link>
+            <span class="btn btn-danger" @click="deleteCategory(cat)">Excluir</span>
           </td>
         </tr>
       </tbody>
@@ -42,24 +38,24 @@ import axios from "axios";
 import { global, mixin } from "../mixins/general.mixin";
 
 export default {
-  name: "Products",
+  name: "Categories",
   components: {},
   mixins: [global, mixin],
   beforeMount() {
-    this.getProducts();
+    this.getCategories();
   },
   data: function () {
     return {
-      products: [],
+      categories: [],
     };
   },
   methods: {
-    async getProducts() {
+    async getCategories() {
       try {
         const { data } = await axios.get(
-          "https://api-casa-do-pastel.herokuapp.com/products"
+          "https://api-casa-do-pastel.herokuapp.com/product-categories"
         );
-        this.products = data;
+        this.categories = data;
       } catch (err) {
         if (err.response) {
           alert(err.response.data.message);
@@ -72,20 +68,20 @@ export default {
         }
       }
     },
-    async deleteProduct(item) {
+    async deleteCategory(cat) {
       try {
-        const response = confirm(`Confirma a exclusão de ${item.name}?`);
+        const response = confirm(`Confirma a exclusão de ${cat.name}?`);
         if (response) {
           const { data } = await axios.delete(
-            `https://api-casa-do-pastel.herokuapp.com/products/${item.id}`,
+            `https://api-casa-do-pastel.herokuapp.com/product-categories/${cat.id}`,
             {
               headers: {
                 Authorization: `Bearer ${this.ls_token}`,
               },
             }
           );
-          alert("Produto excluído!");
-          this.getProducts();
+          alert("Categoria excluída!");
+          this.getCategories();
         }
       } catch (err) {
         if (err.response) {
@@ -98,14 +94,6 @@ export default {
           alert("Houve um erro tente novamente");
         }
       }
-    },
-  },
-  filters: {
-    formatPrice(value) {
-      return `R$ ${Number(value).toLocaleString("br", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      })}`;
     },
   },
 };
@@ -187,7 +175,7 @@ export default {
   padding: 2px 5px;
 }
 
-.link-new-product {
+.link-new-category {
   color: #fff;
   padding: 4px;
 }

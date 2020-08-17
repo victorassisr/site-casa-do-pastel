@@ -43,7 +43,7 @@ export const global = {
     },
     data: () => {
         return {
-            baseUrl: 'http://localhost:3000',
+            baseUrl: 'https://api-casa-do-pastel.herokuapp.com',
             ls_token: '',
             ls_user: null,
             ls_refreshToken: '',

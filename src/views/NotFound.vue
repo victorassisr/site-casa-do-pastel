@@ -13,7 +13,7 @@ export default {
   components: {},
   mounted: () => {
     setTimeout(() => {
-      location.href = "http://localhost:8080";
+      location.href = "/";
     }, 10000);
   },
 };
