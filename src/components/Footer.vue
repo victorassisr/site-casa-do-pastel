@@ -41,9 +41,9 @@ export default {
     return {
       getYear() {
         return new Date().getFullYear();
-      }
+      },
     };
-  }
+  },
 };
 </script>
 
