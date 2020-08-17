@@ -29,7 +29,7 @@
           <td>{{prod.ingredients ? prod.ingredients : '-'}}</td>
           <td>
             <router-link class="btn btn-warning edit" :to="`/products/${prod.id}/edit`">Editar</router-link>
-            <span class="btn btn-danger" @click="deleteCategory(prod)">Excluir</span>
+            <span class="btn btn-danger" @click="deleteProduct(prod)">Excluir</span>
           </td>
         </tr>
       </tbody>
