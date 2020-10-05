@@ -4,8 +4,8 @@
     <form @submit.prevent.stop="updateProduct()">
       <label class="title">
         <span id="mark">
-          <router-link to="/products" id="nav">produtos</router-link>>
-        </span>Editar Produto
+          <router-link to="/products" id="nav">produtos</router-link>> </span
+        >Editar Produto
       </label>
       <div class="form-group">
         <label>
@@ -56,13 +56,24 @@
         />
       </div>
       <div class="form-group">
+        <label>Posição</label>
+        <input
+          type="number"
+          v-model="product.position"
+          class="form-control"
+          placeholder="Posição do Produto"
+        />
+      </div>
+      <div class="form-group">
         <label>
           Categoria
           <span class="required">*</span>
         </label>
         <select class="form-control" v-model="categoryId">
           <option disabled value>Selecione...</option>
-          <option v-for="cat in categories" :key="cat.id" :value="cat.id">{{cat.name}}</option>
+          <option v-for="cat in categories" :key="cat.id" :value="cat.id">
+            {{ cat.name }}
+          </option>
         </select>
       </div>
       <button type="submit" class="btn btn-warning">Salvar</button>
@@ -73,6 +84,8 @@
 <script>
 import { mixin, global } from "../mixins/general.mixin";
 import axios from "axios";
+import { env } from "../env";
+
 export default {
   name: "CreateProduct",
   components: {},
@@ -94,7 +107,7 @@ export default {
     async getProduct() {
       try {
         const { data } = await axios.get(
-          `https://api-casa-do-pastel.herokuapp.com/products/${this.$route.params.id}`
+          `${env.baseURL}products/${this.$route.params.id}`
         );
         if (data) {
           const splited = data.price.split(".");
@@ -126,7 +139,7 @@ export default {
           this.product.categoryId = this.categoryId;
         }
         const { data } = await axios.put(
-          `https://api-casa-do-pastel.herokuapp.com/products/${this.product.id}`,
+          `${env.baseURL}products/${this.product.id}`,
           { ...this.product },
           {
             headers: {
@@ -149,9 +162,7 @@ export default {
     },
     async getCategories() {
       try {
-        const { data } = await axios.get(
-          "https://api-casa-do-pastel.herokuapp.com/product-categories"
-        );
+        const { data } = await axios.get(`${env.baseURL}product-categories`);
 
         // this.categoryId = data.length > 0 ? data[0].id : 0;
         this.categories = data;

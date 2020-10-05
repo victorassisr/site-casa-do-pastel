@@ -5,7 +5,9 @@
       <p class="new">
         <span class="new-text">
           <i class="fa fa-plus" aria-hidden="true"></i>
-          <router-link class="link-new-category" to="/categories/new">Novo</router-link>
+          <router-link class="link-new-category" to="/categories/new"
+            >Novo</router-link
+          >
         </span>
       </p>
     </div>
@@ -20,12 +22,18 @@
       </thead>
       <tbody>
         <tr v-for="(cat, index) in categories" :key="cat.id">
-          <th scope="row">{{index+1}}</th>
-          <td>{{cat.name}}</td>
-          <td>{{cat.products.length}}</td>
+          <th scope="row">{{ index + 1 }}</th>
+          <td>{{ cat.name }}</td>
+          <td>{{ cat.products.length }}</td>
           <td>
-            <router-link class="btn btn-warning edit" :to="`/categories/${cat.id}/edit`">Editar</router-link>
-            <span class="btn btn-danger" @click="deleteCategory(cat)">Excluir</span>
+            <router-link
+              class="btn btn-warning edit"
+              :to="`/categories/${cat.id}/edit`"
+              >Editar</router-link
+            >
+            <span class="btn btn-danger" @click="deleteCategory(cat)"
+              >Excluir</span
+            >
           </td>
         </tr>
       </tbody>
@@ -36,6 +44,7 @@
 <script>
 import axios from "axios";
 import { global, mixin } from "../mixins/general.mixin";
+import { env } from "../env";
 
 export default {
   name: "Categories",
@@ -52,9 +61,7 @@ export default {
   methods: {
     async getCategories() {
       try {
-        const { data } = await axios.get(
-          "https://api-casa-do-pastel.herokuapp.com/product-categories"
-        );
+        const { data } = await axios.get(`${env.baseURL}product-categories`);
         this.categories = data;
       } catch (err) {
         if (err.response) {
@@ -73,7 +80,7 @@ export default {
         const response = confirm(`Confirma a exclusão de ${cat.name}?`);
         if (response) {
           const { data } = await axios.delete(
-            `https://api-casa-do-pastel.herokuapp.com/product-categories/${cat.id}`,
+            `${env.baseURL}product-categories/${cat.id}`,
             {
               headers: {
                 Authorization: `Bearer ${this.ls_token}`,

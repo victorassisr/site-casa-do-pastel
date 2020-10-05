@@ -4,8 +4,9 @@
     <form @submit.prevent.stop="saveChangesCategory()">
       <label class="title">
         <span id="mark">
-          <router-link to="/categories" id="nav">categorias</router-link>>
-        </span>Editar Categoria
+          <router-link to="/categories" id="nav">categorias</router-link
+          >> </span
+        >Editar Categoria
       </label>
       <div class="form-group">
         <label>Nome</label>
@@ -24,6 +25,7 @@
 <script>
 import axios from "axios";
 import { global, mixin } from "../mixins/general.mixin";
+import { env } from "../env";
 
 export default {
   name: "EditCategory",
@@ -41,7 +43,7 @@ export default {
     async getCategory(id) {
       try {
         const { data } = await axios.get(
-          `https://api-casa-do-pastel.herokuapp.com/product-categories/${id}`
+          `${env.baseURL}product-categories/${id}`
         );
         this.category = data;
       } catch (err) {
@@ -61,7 +63,7 @@ export default {
         const response = confirm("Deseja realmente alterar esta categoria?");
         if (response) {
           const { data } = await axios.put(
-            `https://api-casa-do-pastel.herokuapp.com/product-categories/${this.category.id}`,
+            `${env.baseURL}product-categories/${this.category.id}`,
             { ...this.category },
             {
               headers: {

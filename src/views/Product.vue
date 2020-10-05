@@ -5,7 +5,9 @@
       <p class="new">
         <span class="new-text">
           <i class="fa fa-plus" aria-hidden="true"></i>
-          <router-link class="link-new-product" to="/products/new">Novo</router-link>
+          <router-link class="link-new-product" to="/products/new"
+            >Novo</router-link
+          >
         </span>
       </p>
     </div>
@@ -14,6 +16,7 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Produto</th>
+          <th>Posição</th>
           <th>Categoria</th>
           <th>Valor</th>
           <th>Ingredientes</th>
@@ -22,14 +25,21 @@
       </thead>
       <tbody>
         <tr v-for="(prod, index) in products" :key="prod.id">
-          <th scope="row">{{index+1}}</th>
-          <td>{{prod.name}}</td>
-          <td>{{prod.category.name}}</td>
-          <td>{{prod.price | formatPrice() }}</td>
-          <td>{{prod.ingredients ? prod.ingredients : '-'}}</td>
+          <th scope="row">{{ index + 1 }}</th>
+          <td>{{ prod.name }}</td>
+          <td>{{ prod.position ? prod.position : "-" }}</td>
+          <td>{{ prod.category.name }}</td>
+          <td>{{ prod.price | formatPrice() }}</td>
+          <td>{{ prod.ingredients ? prod.ingredients : "-" }}</td>
           <td>
-            <router-link class="btn btn-warning edit" :to="`/products/${prod.id}/edit`">Editar</router-link>
-            <span class="btn btn-danger" @click="deleteProduct(prod)">Excluir</span>
+            <router-link
+              class="btn btn-warning edit"
+              :to="`/products/${prod.id}/edit`"
+              >Editar</router-link
+            >
+            <span class="btn btn-danger" @click="deleteProduct(prod)"
+              >Excluir</span
+            >
           </td>
         </tr>
       </tbody>
@@ -40,6 +50,7 @@
 <script>
 import axios from "axios";
 import { global, mixin } from "../mixins/general.mixin";
+import { env } from "../env";
 
 export default {
   name: "Products",
@@ -56,9 +67,18 @@ export default {
   methods: {
     async getProducts() {
       try {
-        const { data } = await axios.get(
-          "https://api-casa-do-pastel.herokuapp.com/products"
-        );
+        console.log("Params", this.$route.query);
+        let url = `${env.baseURL}products`;
+        if (this.$route.query) {
+          Object.keys(this.$route.query).forEach((k, i) => {
+            if (i == 0) {
+              url += `?${k}=${this.$route.query[k]}`;
+            } else {
+              url += `&${k}=${this.$route.query[k]}`;
+            }
+          });
+        }
+        const { data } = await axios.get(url);
         this.products = data;
       } catch (err) {
         if (err.response) {
@@ -77,7 +97,7 @@ export default {
         const response = confirm(`Confirma a exclusão de ${item.name}?`);
         if (response) {
           const { data } = await axios.delete(
-            `https://api-casa-do-pastel.herokuapp.com/products/${item.id}`,
+            `${env.baseURL}products/${item.id}`,
             {
               headers: {
                 Authorization: `Bearer ${this.ls_token}`,
