@@ -26,7 +26,9 @@
             <router-link class="nav-link" to="/admin">Admin</router-link>
           </li>
           <li v-if="ls_logged" class="nav-item">
-            <router-link class="nav-link" to="/categories">Categorias</router-link>
+            <router-link class="nav-link" to="/categories"
+              >Categorias</router-link
+            >
           </li>
           <li v-if="ls_logged" class="nav-item">
             <router-link class="nav-link" to="/products">Produtos</router-link>
@@ -44,6 +46,7 @@
 
 <script>
 import Footer from "./components/Footer.vue";
+import { env } from "./env";
 import { mixin, global } from "./mixins/general.mixin";
 export default {
   components: {
@@ -51,10 +54,7 @@ export default {
   },
   mixins: [global],
   beforeCreate: function () {
-    localStorage.setItem(
-      "ls_baseUrl",
-      "https://api-casa-do-pastel.herokuapp.com"
-    );
+    localStorage.setItem("ls_baseUrl", `${env.baseURL}`);
   },
   mounted: function () {},
   data: function () {

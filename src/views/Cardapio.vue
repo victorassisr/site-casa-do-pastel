@@ -1,9 +1,13 @@
 <template>
   <div class="wrapper">
     <div class="space"></div>
-    <div class="table-responsive" v-for="category in categories" :key="category.id">
+    <div
+      class="table-responsive"
+      v-for="category in categories"
+      :key="category.id"
+    >
       <p class="category">
-        <span>{{category.name}}</span>
+        <span>{{ category.name }}</span>
       </p>
       <table class="table table-striped">
         <thead>
@@ -15,13 +19,13 @@
         </thead>
         <tbody v-for="(product, index) in category.products" :key="product.id">
           <tr>
-            <th scope="row">{{index+1}}</th>
-            <td class="spotlight">{{product.name}}</td>
-            <td class="spotlight">{{product.price | formatPrice}}</td>
+            <th scope="row">{{ index + 1 }}</th>
+            <td class="spotlight">{{ product.name }}</td>
+            <td class="spotlight">{{ product.price | formatPrice }}</td>
           </tr>
           <tr v-if="product.ingredients">
             <td class="ingredients" colspan="1">Ingredientes:</td>
-            <td class="ingredients" colspan="2">{{product.ingredients}}</td>
+            <td class="ingredients" colspan="2">{{ product.ingredients }}</td>
           </tr>
         </tbody>
       </table>
@@ -31,6 +35,7 @@
 
 <script>
 import axios from "axios";
+import { env } from "../env";
 
 export default {
   name: "Cardapio",
@@ -46,9 +51,7 @@ export default {
   methods: {
     getCategoriesWithProducts: async function () {
       try {
-        const { data } = await axios.get(
-          `https://api-casa-do-pastel.herokuapp.com/product-categories`
-        );
+        const { data } = await axios.get(`${env.baseURL}product-categories`);
         this.categories = data;
       } catch (err) {
         if (err.response) {
@@ -109,7 +112,7 @@ export default {
 .category {
   text-align: center;
   padding: 0;
-  margin: 0;
+  margin: 20px 0 40px 0;
 }
 
 .category span {

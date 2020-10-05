@@ -4,8 +4,9 @@
     <form @submit.prevent.stop="saveCategory()">
       <label class="title">
         <span id="mark">
-          <router-link to="/categories" id="nav">categorias</router-link>>
-        </span>Criar Categoria
+          <router-link to="/categories" id="nav">categorias</router-link
+          >> </span
+        >Criar Categoria
       </label>
       <div class="form-group">
         <label>Nome</label>
@@ -25,6 +26,9 @@
 <script>
 import { mixin, global } from "../mixins/general.mixin";
 import axios from "axios";
+
+import { env } from "../env";
+
 export default {
   name: "CreateCategory",
   components: {},
@@ -38,7 +42,7 @@ export default {
     saveCategory: async function () {
       try {
         const { data } = await axios.post(
-          `https://api-casa-do-pastel.herokuapp.com/product-categories`,
+          `${env.baseURL}product-categories`,
           { ...this.category },
           {
             headers: {

@@ -4,8 +4,8 @@
     <form @submit.prevent.stop="saveProduct()">
       <label class="title">
         <span id="mark">
-          <router-link to="/products" id="nav">produtos</router-link>>
-        </span>Criar Produto
+          <router-link to="/products" id="nav">produtos</router-link>> </span
+        >Criar Produto
       </label>
       <div class="form-group">
         <label>
@@ -62,7 +62,9 @@
         </label>
         <select class="form-control" v-model="categoryId">
           <option disabled value>Selecione...</option>
-          <option v-for="cat in categories" :key="cat.id" :value="cat.id">{{cat.name}}</option>
+          <option v-for="cat in categories" :key="cat.id" :value="cat.id">
+            {{ cat.name }}
+          </option>
         </select>
       </div>
       <button type="submit" class="btn btn-warning">Salvar</button>
@@ -73,6 +75,7 @@
 <script>
 import { mixin, global } from "../mixins/general.mixin";
 import axios from "axios";
+import { env } from "../env";
 export default {
   name: "CreateProduct",
   components: {},
@@ -100,7 +103,7 @@ export default {
           this.product.categoryId = this.categoryId;
         }
         const { data } = await axios.post(
-          `https://api-casa-do-pastel.herokuapp.com/products`,
+          `${env.baseURL}products`,
           { ...this.product },
           {
             headers: {
@@ -123,9 +126,7 @@ export default {
     },
     async getCategories() {
       try {
-        const { data } = await axios.get(
-          "https://api-casa-do-pastel.herokuapp.com/product-categories"
-        );
+        const { data } = await axios.get(`${env.baseURL}product-categories`);
 
         // this.categoryId = data.length > 0 ? data[0].id : 0;
         this.categories = data;
